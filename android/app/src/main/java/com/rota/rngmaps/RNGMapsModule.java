@@ -24,20 +24,4 @@ public class RNGMapsModule extends ReactContextBaseJavaModule {
     public String getName() {
         return REACT_CLASS;
     }
-    @ReactMethod
-    public void addMarker(final ReadableMap config) {
-        uiHandler.post(new AddMarkerTask(config));
-    }
-
-    private class AddMarkerTask implements Runnable {
-        private ReadableMap mConfig;
-        public AddMarkerTask(ReadableMap config) {
-            super();
-            mConfig = config;
-        }
-        @Override
-        public void run() {
-            mView.addMarker(mConfig);
-        }
-    }
 }
