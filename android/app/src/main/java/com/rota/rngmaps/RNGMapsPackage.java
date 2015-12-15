@@ -15,22 +15,15 @@ import java.util.List;
  * Created by Henry on 08/10/2015.
  */
 public class RNGMapsPackage implements ReactPackage {
-    private RNGMapsViewManager viewManager;
-
-    public RNGMapsPackage() {
-        viewManager = new RNGMapsViewManager();
-    }
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
-        List<NativeModule> modules = new ArrayList<>();
-        modules.add(new RNGMapsModule(reactApplicationContext, viewManager));
-        modules.add(new RNGMapsPolylineModule(reactApplicationContext, viewManager));
-        return modules;
+        return new ArrayList<>();
     }
+
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext) {
         return Arrays.<ViewManager>asList(
-                viewManager
+                new RNGMapsModule()
         );
     }
 

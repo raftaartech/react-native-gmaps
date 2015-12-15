@@ -13,7 +13,7 @@ let {
 
 /* RNGMAPS COMP */
 var gmaps = {
-  name: 'RNGMapsViewManager',
+  name: 'RNGMaps',
   propTypes: {
     ...View.propTypes,
     center: PropTypes.object,
@@ -30,7 +30,7 @@ var gmaps = {
   },
 };
 
-let MapView = requireNativeComponent('RNGMapsViewManager', gmaps);
+let MapView = requireNativeComponent('RNGMaps', gmaps);
 
 class RNGMaps extends Component {
   constructor (props) {
